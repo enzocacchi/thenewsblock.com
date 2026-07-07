@@ -74,14 +74,6 @@
             border: 1px solid #e0e0e0;
             margin-bottom: 30px;
         }
-        .featured-story img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            background-color: #ddd; /* Placeholder color */
-            margin-bottom: 15px;
-        }
         .tag {
             background-color: #cc0000;
             color: #fff;
@@ -99,7 +91,7 @@
             line-height: 1.2;
         }
 
-        /* News Sections (Grid for U.S. and World) */
+        /* News Sections (Grid Layout) */
         .news-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -110,10 +102,11 @@
             font-family: 'Arial', sans-serif;
             border-bottom: 2px solid #111;
             padding-bottom: 5px;
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 15px;
             text-transform: uppercase;
             font-size: 1.2rem;
+            letter-spacing: 1px;
         }
         .story-card {
             background: #fff;
@@ -146,7 +139,11 @@
             font-family: 'Arial', sans-serif;
             border-bottom: 2px solid #111;
             padding-bottom: 5px;
+            margin-top: 15px;
             margin-bottom: 15px;
+        }
+        aside h3:first-child {
+            margin-top: 0;
         }
         .sidebar-item {
             padding: 10px 0;
@@ -183,6 +180,7 @@
 </head>
 <body>
 
+    <!-- Website Header -->
     <header>
         <div class="logo">The News World</div>
         <div class="subtitle">Your Weekly Source for United States & International Current Events</div>
@@ -190,13 +188,17 @@
             <a href="#">Home</a>
             <a href="#">United States</a>
             <a href="#">World News</a>
+            <a href="#">Trending Food</a>
             <a href="#">About</a>
         </nav>
     </header>
 
+    <!-- Main Content Area -->
     <div class="container">
         
+        <!-- Left Side: Main News Feed -->
         <main>
+            <!-- Big Featured Story of the Week -->
             <article class="featured-story">
                 <span class="tag">Global Feature</span>
                 <h2><a href="#">How International Cities are Adapting to Changing Weather Patterns</a></h2>
@@ -205,8 +207,25 @@
                 <p>From updated agricultural tech in the Midwest to innovative coastal defenses in Europe, communities around the globe are finding creative ways to handle unusual climate conditions this season...</p>
             </article>
 
+            <!-- News Grid Sections -->
             <div class="news-grid">
                 
+                <!-- NEW SECTION: Trending Food Places -->
+                <h2 class="section-title">Trending Food Places</h2>
+                
+                <article class="story-card">
+                    <div class="date">July 2026</div>
+                    <h3><a href="#">Lima, Peru Named the Top Culinary Hotspot This Year</a></h3>
+                    <p>Celebrated for its incredible biodiversity, Peru's capital is dominating the global food scene with modern twists on traditional Amazonian ingredients and classic ceviche.</p>
+                </article>
+
+                <article class="story-card">
+                    <div class="date">July 2026</div>
+                    <h3><a href="#">Bangkok's Late-Night Street Food Scene Draws Global Foodies</a></h3>
+                    <p>From sizzling stir-fries in historic alleys to complex, fiery curries, travelers are flocking to Thailand to experience authentic, budget-friendly night markets.</p>
+                </article>
+
+                <!-- U.S. News Section -->
                 <h2 class="section-title">United States</h2>
                 
                 <article class="story-card">
@@ -221,6 +240,7 @@
                     <p>Smaller cities are drawing in major software and game development projects outside of Silicon Valley.</p>
                 </article>
 
+                <!-- World News Section -->
                 <h2 class="section-title">World News</h2>
                 
                 <article class="story-card">
@@ -238,6 +258,7 @@
             </div>
         </main>
 
+        <!-- Right Side: Sidebar -->
         <aside>
             <h3>About Thennewsworld</h3>
             <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">
@@ -258,6 +279,7 @@
 
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 thenewsworld.com. All rights reserved.</p>
         <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">Keeping you connected to current events, one week at a time.</p>
