@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The News World | Weekly Current Events</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: #111;
+        }
+        a:hover {
+            color: #0066cc;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            border-bottom: 4px solid #111;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        nav {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Main Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Featured Article */
+        .featured-story {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        .featured-story img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            background-color: #ddd; /* Placeholder color */
+            margin-bottom: 15px;
+        }
+        .tag {
+            background-color: #cc0000;
+            color: #fff;
+            padding: 2px 8px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .featured-story h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        /* News Sections (Grid for U.S. and World) */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .section-title {
+            grid-column: span 2;
+            font-family: 'Arial', sans-serif;
+            border-bottom: 2px solid #111;
+            padding-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+        .story-card {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+        }
+        .story-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .story-card p, .featured-story p {
+            color: #444;
+            font-size: 0.95rem;
+        }
+        .date {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        /* Sidebar */
+        aside {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            height: fit-content;
+        }
+        aside h3 {
+            font-family: 'Arial', sans-serif;
+            border-bottom: 2px solid #111;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .sidebar-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">The News World</div>
+        <div class="subtitle">Your Weekly Source for United States & International Current Events</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">United States</a>
+            <a href="#">World News</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <main>
+            <article class="featured-story">
+                <span class="tag">Global Feature</span>
+                <h2><a href="#">How International Cities are Adapting to Changing Weather Patterns</a></h2>
+                <div class="date">Updated July 2026</div>
+                <div style="background:#ddd; width:100%; height:250px; margin: 15px 0; display:flex; align-items:center; justify-content:center; color:#666;">[Featured News Image Placeholder]</div>
+                <p>From updated agricultural tech in the Midwest to innovative coastal defenses in Europe, communities around the globe are finding creative ways to handle unusual climate conditions this season...</p>
+            </article>
+
+            <div class="news-grid">
+                
+                <h2 class="section-title">United States</h2>
+                
+                <article class="story-card">
+                    <div class="date">July 2026</div>
+                    <h3><a href="#">National Parks Report Record Attendance This Summer</a></h3>
+                    <p>More Americans are hitting the road to explore historic trails and protected wilderness areas than ever before.</p>
+                </article>
+
+                <article class="story-card">
+                    <div class="date">July 2026</div>
+                    <h3><a href="#">New Tech Hubs Expanding Fast Across the Midwest</a></h3>
+                    <p>Smaller cities are drawing in major software and game development projects outside of Silicon Valley.</p>
+                </article>
+
+                <h2 class="section-title">World News</h2>
+                
+                <article class="story-card">
+                    <div class="date">July 2026</div>
+                    <h3><a href="#">Major Archaeological Discovery Found in Central America</a></h3>
+                    <p>Researchers map an ancient city hidden deep beneath the jungle canopy using new scanning technology.</p>
+                </article>
+
+                <article class="story-card">
+                    <div class="date">July 2026</div>
+                    <h3><a href="#">Global Initiative Aims to Protect Deep Sea Ecosystems</a></h3>
+                    <p>An alliance of nations signs a new treaty establishing vast marine sanctuaries across international waters.</p>
+                </article>
+
+            </div>
+        </main>
+
+        <aside>
+            <h3>About Thennewsworld</h3>
+            <p style="font-size: 0.9rem; color: #555; margin-bottom: 20px;">
+                Welcome to <strong>thenewsworld.com</strong>! We bring you a curated digest of a few high-quality articles every week, focusing on key current events happening across the United States and all around the globe.
+            </p>
+            
+            <h3>Quick Updates</h3>
+            <div class="sidebar-item">
+                <a href="#"><strong>Space:</strong> Mars rover spots unique rock formations.</a>
+            </div>
+            <div class="sidebar-item">
+                <a href="#"><strong>Nature:</strong> Wildlife corridors expanding across Europe.</a>
+            </div>
+            <div class="sidebar-item">
+                <a href="#"><strong>Sports:</strong> International tournament kicks off next week.</a>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 thenewsworld.com. All rights reserved.</p>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">Keeping you connected to current events, one week at a time.</p>
+    </footer>
+
+</body>
+</html>
