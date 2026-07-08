@@ -1,1 +1,48 @@
+import random
 
+def read_altitude_sensor():
+    """Simulates reading a spacecraft's altitude sensor."""
+    return 150000  # Target altitude in meters
+
+def get_sensor_readings():
+    """
+    Simulates three independent computers reading the sensor data.
+    One computer gets hit by a cosmic radiation ray and glitches!
+    """
+    reading_a = read_altitude_sensor()
+    reading_b = read_altitude_sensor()
+    reading_c = read_altitude_sensor()
+    
+    # Simulating a radiation bit-flip glitch on Computer B
+    reading_b = reading_b + random.choice([-5000, 12000]) 
+    
+    return [reading_a, reading_b, reading_c]
+
+def nasa_voting_system(readings):
+    """
+    Compares the three readings. If two or more agree, 
+    it ignores the glitched computer and keeps the mission safe.
+    """
+    print(f"Raw Satellite Telemetry Received: {readings}")
+    
+    # Count how often each reading appears
+    vote_count = {}
+    for value in readings:
+        vote_count[value] = vote_count.get(value, 0) + 1
+        
+    # Find the reading that has the majority vote
+    for value, count in vote_count.items():
+        if count >= 2:
+            return value
+            
+    return None # Emergency error if all three disagree
+
+# --- Running the Flight Software ---
+print("--- INITIALIZING FLIGHT CONTROL SOFTWARE ---")
+sensor_data = get_sensor_readings()
+safe_altitude = nasa_voting_system(sensor_data)
+
+if safe_altitude:
+    print(f"SUCCESS: Thrusters adjusted using verified altitude: {safe_altitude} meters.")
+else:
+    print("CRITICAL ERROR: Telemetry mismatched. Switching to manual backup systems.")
