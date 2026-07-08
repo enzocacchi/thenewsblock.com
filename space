@@ -1,48 +1,278 @@
-import random
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Rover Spots Unique Rock Formations | The News World</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        a {
+            text-decoration: none;
+            color: #111;
+        }
+        a:hover {
+            color: #0066cc;
+        }
 
-def read_altitude_sensor():
-    """Simulates reading a spacecraft's altitude sensor."""
-    return 150000  # Target altitude in meters
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            border-bottom: 4px solid #111;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        nav {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
 
-def get_sensor_readings():
-    """
-    Simulates three independent computers reading the sensor data.
-    One computer gets hit by a cosmic radiation ray and glitches!
-    """
-    reading_a = read_altitude_sensor()
-    reading_b = read_altitude_sensor()
-    reading_c = read_altitude_sensor()
-    
-    # Simulating a radiation bit-flip glitch on Computer B
-    reading_b = reading_b + random.choice([-5000, 12000]) 
-    
-    return [reading_a, reading_b, reading_c]
+        /* Main Article Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 40px;
+        }
 
-def nasa_voting_system(readings):
-    """
-    Compares the three readings. If two or more agree, 
-    it ignores the glitched computer and keeps the mission safe.
-    """
-    print(f"Raw Satellite Telemetry Received: {readings}")
-    
-    # Count how often each reading appears
-    vote_count = {}
-    for value in readings:
-        vote_count[value] = vote_count.get(value, 0) + 1
+        /* Article Content */
+        article {
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #e0e0e0;
+        }
+        .category-tag {
+            color: #cc0000;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            color: #111;
+        }
+        .meta-info {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .meta-info span {
+            margin-right: 15px;
+        }
         
-    # Find the reading that has the majority vote
-    for value, count in vote_count.items():
-        if count >= 2:
-            return value
+        /* Article Image */
+        .article-image-box {
+            background-color: #e5e5e5;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+        }
+        .image-caption {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.85rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 8px;
+            text-align: left;
+            width: 100%;
+        }
+
+        /* Article Body Text */
+        .article-body p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .article-body p::first-letter {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        aside {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            height: fit-content;
+        }
+        aside h3 {
+            font-family: 'Arial', sans-serif;
+            border-bottom: 2px solid #111;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        .sidebar-story {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .sidebar-story:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .sidebar-story h4 {
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+        .sidebar-date {
+            font-family: 'Arial', sans-serif;
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .article-image-box {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Website Header -->
+    <header>
+        <div class="logo"><a href="index.html">The News World</a></div>
+        <div class="subtitle">Your Weekly Source for United States & International Current Events</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">United States</a>
+            <a href="#">World News</a>
+            <a href="#">Space & NASA</a>
+            <a href="#">Trending Food</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        
+        <!-- Left Side: Full Article View -->
+        <main>
+            <article>
+                <span class="category-tag">Space & Exploration</span>
+                <h1>Mars Rover Spots Unique, Wave-Like Rock Formations</h1>
+                
+                <div class="meta-info">
+                    <span><strong>By Alex Mercer</strong></span>
+                    <span>Published: July 2026</span>
+                    <span>Read Time: 3 min</span>
+                </div>
+
+                <!-- Main Image Area -->
+                <div class="article-image-box">
+                    <div style="font-size: 1.2rem; font-weight: bold;">[Mars Rover Image Placeholder]</div>
+                    <div style="font-size: 0.9rem;">Replace with &lt;img src="your-image.jpg"&gt; later</div>
+                </div>
+                <p class="image-caption">Panoramic shot taken by the rover's mast camera showing the layered, rhythmic ridges in the Martian soil.</p>
+
+                <!-- Article Text -->
+                <div class="article-body">
+                    <p>NASA's newest Mars exploration rover has sent back a series of captivating high-resolution images showing strange, wave-like rippled rock formations inside an ancient lake bed crater.</p>
+                    
+                    <p>Scientists back at the Jet Propulsion Laboratory were thrilled to see the clear, rhythmic patterns carved into the dark stone. On Earth, these specific kinds of stone textures are usually formed when water waves constantly slide back and forth over shallow mud or sand, hardening into rock over millions of years.</p>
+                    
+                    <p>The automated vehicle utilized its specialized laser spectrometers to analyze the chemical makeup of the ridges, discovering high traces of sulfates and clay minerals. This data strongly supports the idea that water persisted on the red planet far longer than previous studies estimated.</p>
+                    
+                    <p>The exploration team plans to have the rover deploy its robotic drill to take a physical core sample of the rippled structure next week. The onboard software will closely monitor the drilling pressure and temperatures to safely store the samples for a future return mission to Earth.</p>
+                </div>
+            </article>
+        </main>
+
+        <!-- Right Side: Sidebar with More News -->
+        <aside>
+            <h3>More Top Stories</h3>
             
-    return None # Emergency error if all three disagree
+            <div class="sidebar-story">
+                <h4><a href="#">How Spacecraft Code Defends Against Radiation Glitches</a></h4>
+                <div class="sidebar-date">July 2026</div>
+            </div>
 
-# --- Running the Flight Software ---
-print("--- INITIALIZING FLIGHT CONTROL SOFTWARE ---")
-sensor_data = get_sensor_readings()
-safe_altitude = nasa_voting_system(sensor_data)
+            <div class="sidebar-story">
+                <h4><a href="#">Lima, Peru Named the Top Culinary Hotspot This Year</a></h4>
+                <div class="sidebar-date">July 2026</div>
+            </div>
 
-if safe_altitude:
-    print(f"SUCCESS: Thrusters adjusted using verified altitude: {safe_altitude} meters.")
-else:
-    print("CRITICAL ERROR: Telemetry mismatched. Switching to manual backup systems.")
+            <div class="sidebar-story">
+                <h4><a href="#">National Parks Report Record Attendance This Summer</a></h4>
+                <div class="sidebar-date">July 2026</div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 thenewsworld.com. All rights reserved.</p>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">Keeping you connected to current events, one week at a time.</p>
+    </footer>
+
+</body>
+</html>
